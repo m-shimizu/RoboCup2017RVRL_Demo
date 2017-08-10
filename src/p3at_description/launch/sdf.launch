@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- About to set pose at spawning
+http://answers.ros.org/question/40627/how-do-i-set-the-inital-pose-of-a-robot-in-gazebo/
+-->
+
+<arg name="pose_x" default="0"/>
+<arg name="pose_y" default="1"/>
+<arg name="pose_yaw" default="0"/>
+<arg name="world_name" default="USARGazebo.world"/>
+<arg name="paused" default="false"/>
+<arg name="use_sim_time" default="true"/>
+<arg name="gui" default="true"/>
+<arg name="verbose" default="false"/>
+
+<!-- Launch gazebo -->
+<node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen" args="$(find p3at_gazebo)/worlds/$(arg world_name)" />
+<node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+
+<!--
+<param name="robot_description" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at_rc2016.urdf.xacro' robot_name:='/' " />
+-->
+<!--
+<param name="robot_description" textfile="/home/masaru/.gazebo/models/my_tex/model.sdf" />
+-->
+
+<node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-database pioneer3at_with_sensors -gazebo -model aaa -x $(arg pose_x) -y $(arg pose_y) -Y $(arg pose_yaw)"/>
+
+<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+</launch>

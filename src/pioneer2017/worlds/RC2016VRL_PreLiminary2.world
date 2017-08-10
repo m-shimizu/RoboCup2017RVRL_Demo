@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+    <gui>
+      <camera name='user_default'>
+        <pose>-2.5 5 60 0 1.57 -1.57</pose>
+      </camera>
+    </gui>
+
+  <model name="invisible_ground_plane">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5000 5000</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+  </model>
+
+<!--
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+-->
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+<!--
+    <light type="directional" name="my_light0">
+      <pose>0 0 100 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>10</range>
+        <linear>0.01</linear>
+        <constant>0.5</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+-->
+
+    <light type="directional" name="SL_TOP">
+      <pose>0 0 100 0 0 0</pose>
+      <direction>0 0 1</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_XP">
+      <pose>100 0 1 0 0 0</pose>
+      <direction>-1 0 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_XM">
+      <pose>-100 0 1 0 0 0</pose>
+      <direction>1 0 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_YP">
+      <pose>0 100 1 0 0 0</pose>
+      <direction>0 -1 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_YM">
+      <pose>0 -100 1 0 0 0</pose>
+      <direction>0 1 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="VL1">
+      <pose>-24 -0.1 400 0 0 0</pose>
+      <diffuse>0.1 0.1 0.1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>500</range>
+        <linear>0.01</linear>
+        <constant>0.01</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="VL2">
+      <pose>11 -3 400 0 0 0</pose>
+      <diffuse>0.1 0.1 0.1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>500</range>
+        <linear>0.01</linear>
+        <constant>0.01</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="VL3">
+      <pose>-20.7 -1.62 0 400 0 0 0</pose>
+      <diffuse>0.1 0.1 0.1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>500</range>
+        <linear>0.01</linear>
+        <constant>0.01</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+<!-- PortMesse Kouryu 1F -->
+    <include>
+      <pose>0 0 0.99 0 0 0</pose>
+      <static>1</static>
+      <uri>model://RC2016VRL_kouryu1f</uri>
+    </include>
+<!-- Victims -->
+    <include>
+      <name>V1</name>
+      <static>1</static>
+      <pose>24 -0.1 0 1.57 0 1.57</pose>
+      <uri>model://victim</uri>
+    </include>
+    <include>
+      <name>V2</name>
+      <static>1</static>
+      <pose>11 -3 0 1.57 0 1.57</pose>
+      <uri>model://victim</uri>
+    </include>
+    <include>
+      <name>V3</name>
+      <static>1</static>
+      <pose>-20.7 -1.62 0 1.57 0 0</pose>
+      <uri>model://victim</uri>
+    </include>
+
+<!--
+    <plugin name="USARGazebo" filename="libUSARGazebo.so">
+      <StartPose_1>StartPoint1  2,-2,0.3 0,0,0</StartPose_1>
+      <StartPose_2>StartPoint2 -1,-2,0.3 0,0,1.57</StartPose_2>
+      <StartPose_3>StartPoint3 -4,-2,0.3 0,0,3.14</StartPose_3>
+      <StartPose_4>StartPoint4 -7,-2,0.3 0,0,4.71</StartPose_4>
+    </plugin>
+-->
+
+  </world>
+</sdf>
+

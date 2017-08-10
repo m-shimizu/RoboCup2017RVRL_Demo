@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="pioneer3at_ros4">
+    <pose>0 0 0.180 0 0 0</pose>
+    <static>false</static>
+    <link name="chassis">
+      <inertial>
+        <mass>14.0</mass>
+        <inertia>
+          <!-- http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
+          MATLAB:
+          m=14; h=0.19; w=0.4; d=0.5; 
+          ixx = 1/12*m*(h^2+d^2)
+          iyy = 1/12*m*(w^2+d^2) 
+          izz = 1/12*m*(h^2+d^2) 
+          -->
+          <ixx>0.147116667</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.334951167</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.3978345</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision1">
+        <geometry>
+          <box>
+            <size>0.501 0.300 0.19</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual1">
+        <geometry>
+          <mesh>
+            <uri>model://pioneer3at_ros4/meshes/chassis.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_front_wheel">
+      <pose>0.125 -0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.110</radius>
+            <length>0.075</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0.5</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pioneer3at_ros4/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="left_front_wheel">
+      <pose>0.125 0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.110</radius>
+            <length>0.075</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0.5</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pioneer3at_ros4/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_rear_wheel">
+      <pose>-0.125 -0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.110</radius>
+            <length>0.075</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0.5</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pioneer3at_ros4/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="left_rear_wheel">
+      <pose>-0.125 0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.110</radius>
+            <length>0.075</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0.5</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pioneer3at_ros4/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint type="revolute" name="right_front">
+      <pose>0 0 0 0 0 0</pose>
+      <child>right_front_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint type="revolute" name="right_rear">
+      <pose>0 0 0 0 0 0</pose>
+      <child>right_rear_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint type="revolute" name="left_front">
+      <pose>0 0 0 0 0 0</pose>
+      <child>left_front_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint type="revolute" name="left_rear">
+      <pose>0 0 0 0 0 0</pose>
+      <child>left_rear_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <robotNamespace>pioneer3at_ros4</robotNamespace>
+      <updateRate>100.0</updateRate>
+      <leftFrontJoint>left_front</leftFrontJoint>
+      <rightFrontJoint>right_front</rightFrontJoint>
+      <leftRearJoint>left_rear</leftRearJoint>
+      <rightRearJoint>right_rear</rightRearJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.215</wheelDiameter>
+      <robotBaseFrame>chassis</robotBaseFrame>
+      <torque>200</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <broadcastTF>true</broadcastTF>
+    </plugin>
+
+    <!-- Original libDSkidSteerDrivePlugin for sample
+    <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so">
+      <right_front>right_front</right_front>
+      <right_rear>right_rear</right_rear>
+      <left_front>left_front</left_front>
+      <left_rear>left_rear</left_rear>
+      <MaxForce>5.0</MaxForce>
+    </plugin>
+    -->
+
+<!-- Camera (hight is 100mm) -->
+    <link name="camera_ros_link">
+      <audio_sink/>
+      <pose>0.1 0 0.22 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000166667</ixx>
+          <iyy>0.000166667</iyy>
+          <izz>0.000166667</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+<!-- THERMAL CAMERA --> 
+      <sensor type="camera" name="thermal_camera_sensor">
+        <update_rate>10</update_rate>
+        <camera name="camera_ros_thermal">
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>160</width>
+            <height>120</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+<!--
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+-->
+        </camera>
+        <plugin name="thermal_camera_controller" filename="libgazebo_ros_thermal_camera_pink.so">
+          <robotNamespace>pioneer3at_ros4</robotNamespace>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>10</updateRate>
+          <imageTopicName>thermal_camera/image_raw</imageTopicName>
+          <cameraInfoTopicName>thermal_camera/camera_info</cameraInfoTopicName>
+          <frameName>thermal_optical_frame</frameName>
+          <interface:camera name="thermal_camera_iface" />
+        </plugin>
+      </sensor> -->
+<!-- CAMERA -->
+      <sensor type="camera" name="camera_ros">
+        <update_rate>20</update_rate>
+        <camera name="camera_ros">
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+     <!-- Noise is sampled independently per pixel on each frame.
+          That pixel's noise value is added to each of its color
+          channels, which at that point lie in the range [0,1]. -->
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <robotNamespace>pioneer3at_ros4</robotNamespace>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>camera_ros</cameraName>
+          <imageTopicName>image</imageTopicName>
+          <cameraInfoTopicName>camera_ros_info</cameraInfoTopicName>
+          <frameName>camera_ros_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name="camera_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>camera_ros_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+    
+<!-- Hokuyo (hight is 70mm) -->
+    <link name="hokuyo_ros_link">
+      <pose>0.1 0 0.135 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://hokuyo_ros/meshes/hokuyo.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision-base">
+        <pose>0 0 -0.0145 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.041</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision-top">
+        <pose>0 0 0.0205 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.021</radius>
+            <length>0.029</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor type="ray" name="lms200">
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+            <samples>181</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.08</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <plugin name="gazebo_ros_hokuyo_controller" filename="libgazebo_ros_laser.so">
+          <robotNamespace>pioneer3at_ros4</robotNamespace>
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30</updateRate>
+          <topicName>scan</topicName>
+          <frameName>hokuyo_frame</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name="hokuyo_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>hokuyo_ros_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+    
+  </model>
+</sdf>
+

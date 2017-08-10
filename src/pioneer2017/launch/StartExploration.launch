@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="robot1"/>
+
+  <group ns="$(arg robot_name)">
+   <node pkg="rosservice" type="rosservice" name="StartExploration" args="call --wait /$(arg robot_name)/StartExploration"/>
+
+  </group>
+
+</launch>

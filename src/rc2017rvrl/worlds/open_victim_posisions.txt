@@ -1,0 +1,45 @@
+victim175_hot
+<pose frame=''>34.7273 4.26434 0.246176 -0.076297 -0.59849 1.70779</pose>
+
+victim175_hot_0
+<pose frame=''>29.7309 -66.1749 0.170637 0.542168 0.016693 -0.027801</pose>
+
+victim175_hot_moving
+<pose frame=''>-68.8162 3.58035 0.219801 0.354394 0.441788 -0.855036</pose>
+
+victimWoman_voice
+<pose frame=''>68.7448 41.5105 0 1.57 -0 0</pose>
+
+
+
+
+
+    <include>
+      <name>victim175_1</name>
+      <pose frame=''>34.7273 4.26434 0.246176 -0.076297 -0.59849 1.70779</pose>
+      <static>1</static>
+      <uri>model://victim175_hot</uri>
+    </include>
+
+    <include>
+      <name>victim175_2</name>
+      <pose frame=''>29.7309 -66.1749 0.170637 0.542168 0.016693 -0.027801</pose>
+      <static>1</static>
+      <uri>model://victim175_hot</uri>
+    </include>
+
+    <include>
+      <name>victim175_3</name>
+      <pose frame=''>-68.8162 3.58035 0.219801 0.354394 0.441788 -0.855036</pose>
+      <static>1</static>
+      <uri>model://victim175_hot_moving</uri>
+    </include>
+
+    <include>
+      <name>victim175_4</name>
+      <pose frame=''>68.7448 41.5105 0 1.57 -0 0</pose>>
+      <static>1</static>
+      <uri>model://victim175_hot_moving</uri>
+    </include>
+
+

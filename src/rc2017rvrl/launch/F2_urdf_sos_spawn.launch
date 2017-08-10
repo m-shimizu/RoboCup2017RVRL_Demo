@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <include file="$(find p3at_urdf)/launch/P3AT_launch_files/p3at_spawn.launch">
+    <arg name="robotname" value="sos2"/>
+    <arg name="initialx" value="23"/>
+    <arg name="initialy" value="66"/>
+    <arg name="initialz" value="0.2"/>
+  </include>
+
+</launch>
+
+

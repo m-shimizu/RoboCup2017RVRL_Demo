@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="use_sim_time" value="true"/>
+  
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world" default="AEON_no_robot.world"/>
+
+  <!-- Launch robot state publishers -->
+
+  <include file="$(find p3at_urdf)/launch/P3AT_launch_files/p3at_spawn.launch">
+    <arg name="robotname" value="robot0"/>
+    <arg name="initialx" value="-14.0875"/>
+    <arg name="initialy" value="34.3848"/>
+    <arg name="initialz" value="0.2"/>
+  </include>
+
+  <include file="$(find p3at_urdf)/launch/P3AT_launch_files/p3at_spawn.launch">
+    <arg name="robotname" value="robot1"/>
+    <arg name="initialx" value="-45.6802"/>
+    <arg name="initialy" value="38.5996"/>
+    <arg name="initialz" value="0.2"/>
+  </include>
+
+  <include file="$(find p3at_urdf)/launch/P3AT_launch_files/p3at_spawn.launch">
+    <arg name="robotname" value="robot2"/>
+    <arg name="initialx" value="-66.6111"/>
+    <arg name="initialy" value="-27.312"/>
+    <arg name="initialz" value="0.2"/>
+  </include>
+
+  <include file="$(find p3at_urdf)/launch/P3AT_launch_files/p3at_spawn.launch">
+    <arg name="robotname" value="robot3"/>
+    <arg name="initialx" value="-54.9065"/>
+    <arg name="initialy" value="-27.159"/>
+    <arg name="initialz" value="0.2"/>
+  </include>
+
+  <!-- Launch gazebo -->
+
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen" args="$(find rc2017rvrl)/worlds/$(arg world)"/>
+  <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+
+  <!-- Transfer sound to ROS -->
+
+  <include file="$(find audio_capture)/launch/capture.launch">
+    <arg name="ns" value="gazebo"/>
+    <arg name="device" value="pulse"/>
+  </include>
+
+</launch>
+
+

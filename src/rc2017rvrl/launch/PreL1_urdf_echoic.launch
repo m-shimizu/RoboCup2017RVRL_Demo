@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="use_sim_time" value="true"/>
+  
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world" default="AEON_no_robot.world"/>
+
+  <!-- Launch robot state publishers 
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot1"/>
+    <arg name="pose_x" value="-14.0875"/> 
+    <arg name="pose_y" value=" 34.3848"/>
+    <arg name="pose_z" value="0.2"/>
+    <arg name="pose_yaw" default="0"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+   <arg name="robot_name" value="robot2"/>
+    <arg name="pose_x" value="-45.6802"/> 
+    <arg name="pose_y" value="38.5996"/>
+    <arg name="pose_yaw" default="0"/>
+    <arg name="pose_z" value="0.2"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot3"/>
+    <arg name="pose_x" value="-66.6111"/> 
+    <arg name="pose_y" value="-27.312"/>
+    <arg name="pose_yaw" default="3.14"/>
+    <arg name="pose_z" value="0.2"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot4"/>
+    <arg name="pose_x" value="-54.9065"/> 
+    <arg name="pose_y" value="-27.159"/>
+    <arg name="pose_yaw" default="3.14"/>
+    <arg name="pose_z" value="0.2"/>
+  </include> -->
+
+  <!-- Launch gazebo -->
+
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen" args="$(find rc2017rvrl)/worlds/$(arg world)"/>
+  <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+
+  <!-- Transfer sound to ROS -->
+
+  <include file="$(find audio_capture)/launch/capture.launch">
+    <arg name="ns" value="gazebo"/>
+    <arg name="device" value="pulse"/>
+  </include>
+
+</launch>
+
+

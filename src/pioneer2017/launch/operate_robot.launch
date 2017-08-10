@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="robot1"/>
+
+  <group ns="$(arg robot_name)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/manual/rviz/$(arg robot_name).rviz"/>
+  </group>
+
+  <!-- Not working with Name Spacei ..... ?
+  <group ns="$(arg robot_name)" if="$(arg joystick)">
+  -->
+    <!--<include file="$(find teleop_joy)/launch/teleop_joy.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>-->
+
+</launch>

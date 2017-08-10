@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+
+<!-- ROBOT LOCATIONS 
+<pose frame=''>-14.0875 34.3848 0.2 0 -0 0</pose>
+<pose frame=''>-45.6802 38.5996 0.2 0 -0 0</pose>
+<pose frame=''>-66.6111 -27.312 0.2 0 -0 0</pose>
+<pose frame=''>-54.9065 -27.159 0.2 0 -0 0</pose>
+-->
+    <include>
+      <pose frame=''>-14.0875 34.3848 0.2 0 -0 0</pose>
+      <static>0</static>
+      <uri>model://pioneer3at_yildiz_robot0</uri>
+    </include>
+
+    <include>
+      <pose frame=''>-45.6802 38.5996 0.2 0 -0 0</pose>
+      <static>0</static>
+      <uri>model://pioneer3at_yildiz_robot1</uri>
+    </include>
+
+    <include>
+      <pose frame=''>-66.6111 -27.312 0.2 0 -0 3.14</pose>
+      <static>0</static>
+      <uri>model://pioneer3at_yildiz_robot2</uri>
+    </include>
+
+    <include>
+      <pose frame=''>-54.9065 -27.159 0.2 0 -0 3.14</pose>
+      <static>0</static>
+      <uri>model://pioneer3at_yildiz_robot3</uri>
+    </include>
+
+<!--Alive
+<pose frame=''>-15.3853 30.0694 0 0 -0 0</pose>
+<pose frame=''>-34.1968 35.617 0 0 -0 0</pose>
+<pose frame=''>-14.344 -30.055 0 0 -0 0</pose>
+<pose frame=''>-22.0236 35.7683 0 0 -0 0</pose>
+      <uri>model://victim175_hot_moving</uri>
+-->
+    <include>
+      <name>victim1</name>
+      <pose frame=''>-15.3853 30.0694 0 0 -0 0</pose>
+      <uri>model://victim175_hot</uri>
+    </include>
+
+    <include>
+      <name>victim2</name>
+      <pose frame=''>-34.1968 35.617 0 0 -0 0</pose>
+      <uri>model://victim175_hot</uri>
+    </include>
+
+    <include>
+      <name>victim3</name>
+      <pose frame=''>-14.344 -30.055 0 0 -0 0</pose>
+      <uri>model://victim175_hot</uri>
+    </include>
+
+    <include>
+      <name>victim4</name>
+      <pose frame=''>-22.0236 35.7683 0 0 -0 0</pose>
+      <uri>model://victim175_hot_moving</uri>
+    </include>
+<!-- Dead
+<pose frame=''>9.68101 -9.24015 0.5 0 -0 0</pose>
+-->
+    <include>
+      <name>victim5</name>
+      <pose frame=''>9.68101 -9.24015 0 0 -0 0</pose>
+      <uri>model://victim175_cold</uri>
+    </include>
+
+
+    <gui>
+      <camera name='user_default'>
+        <pose>-2.5 -10 110 0 1.57 0</pose>
+      </camera>
+    </gui>
+
+    <model name="invisible_ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>5000 5000</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+    </model>
+<!--
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+-->
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <light type="directional" name="SL_TOP">
+      <pose>0 0 -100 0 0 0</pose>
+      <direction>0 0 1</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_XP">
+      <pose>100 0 1 0 0 0</pose>
+      <direction>-1 0 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_XM">
+      <pose>-100 0 1 0 0 0</pose>
+      <direction>1 0 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_YP">
+      <pose>0 100 1 0 0 0</pose>
+      <direction>0 -1 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <light type="directional" name="SL_YM">
+      <pose>0 -100 1 0 0 0</pose>
+      <direction>0 1 0</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>500</range>
+        <linear>0.9</linear>
+        <constant>0.5</constant>
+        <quadratic>0.1</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <include>
+      <pose>0 0 -23.47 0 0 0</pose>
+      <static>1</static>
+      <uri>model://AEON_Yagoto</uri>
+    </include>
+
+  </world>
+</sdf>

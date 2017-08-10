@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot1"/>
+    <!--arg name="pose_x" value="-14.0875"/-->
+    <arg name="pose_x" value="-14.0875"/>
+ 
+    <!--arg name="pose_y" value=" 34.3848"/-->
+    <arg name="pose_y" value="34.3848"/>
+    <arg name="pose_z" value="0.2"/>
+    <arg name="pose_yaw" default="0"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+   <arg name="robot_name" value="robot2"/>
+    <arg name="pose_x" value="-45.6802"/> 
+    <arg name="pose_y" value="38.5996"/>
+    <arg name="pose_yaw" default="0"/>
+    <arg name="pose_z" value="0.2"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot3"/>
+    <arg name="pose_x" value="-66.6111"/> 
+    <arg name="pose_y" value="-27.312"/>
+    <arg name="pose_yaw" default="3.14"/>
+    <arg name="pose_z" value="0.2"/>
+  </include>
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot4"/>
+    <arg name="pose_x" value="-54.9065"/> 
+    <arg name="pose_y" value="-27.159"/>
+    <arg name="pose_yaw" default="3.14"/>
+    <arg name="pose_z" value="0.2"/>
+  </include> 
+
+</launch>

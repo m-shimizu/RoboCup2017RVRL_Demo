@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="robot1"/>
+
+  <group ns="$(arg robot_name)">
+   <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="cmd_vel:=/$(arg robot_name)/cmd_vel" launch-prefix="xterm -e"/>
+
+  </group>
+
+</launch>

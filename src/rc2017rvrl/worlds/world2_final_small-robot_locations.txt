@@ -1,0 +1,12 @@
+robot location:
+x=-2;y=-51;
+x=-2;y=-50;
+x=-3;y=-51;
+x=-3;y=-50;
+
+
+Dead Victims : 4
+AliveVictims : 4
+
+size : 154m x 162m  (72,82) - (-82,-80)
+

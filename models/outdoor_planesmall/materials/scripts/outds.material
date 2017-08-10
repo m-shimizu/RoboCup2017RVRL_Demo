@@ -1,0 +1,16 @@
+material outdss/Image
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture outds.jpg
+				filtering anistropic
+				max_anisotropy 16
+				scale 0.4 0.4
+			}
+		}
+	}
+}

@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+    <gui>
+      <camera name='user_default'>
+        <pose>16 0 12 0 0.6 -3.141</pose>
+      </camera>
+    </gui>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <light type="directional" name="my_light0">
+      <pose>0 0 30 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.5</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+<!-- SIMPLE BLOCK WORLD -->
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <static>1</static>
+      <uri>model://simple_block_world</uri>
+    </include>
+<!-- USARGazebo is NEEDLESS for gazebo_ros environment -->
+    <plugin name="USARGazebo" filename="libUSARGazebo.so">
+      <StartPose_1>Point1 0,0,0.3 0,0,3.14</StartPose_1>
+      <StartPose_2>Point2 0,1,0.3 0,0,1.57</StartPose_2>
+      <StartPose_3>Point3 1,0,0.3 0,0,-1.57</StartPose_3>
+      <StartPose_4>Point4 1,1,0.3 0,0,0</StartPose_4>
+      <GroundTruth>True</GroundTruth>
+    </plugin>
+-->
+
+<!--  Portmessa Nagoya (The RoboCup 2017 venue)
+    <include>
+      <static>1</static>
+      <uri>model://portmessa</uri>
+    </include>
+-->
+
+<!-- 
+=============================================================
+  HOW TO GET robocup2012_rvrl_pre1  
+    You can get it by using following commands  
+     $ cd ~/.gazebo/models  
+     $ git clone https://github.com/m-shimizu/robocup2012_rvrl_pre1/  
+     $ cd robocup2012_rvrl_pre1/meshes  
+     $ unzip RC2012Pre1.dae.zip  
+=============================================================
+-->
+<!-- RoboCup 2012 Rescue Virtual Robot League Pre-Liminary 1
+    <include>
+      <static>1</static>
+      <uri>model://robocup2012_rvrl_pre1</uri>
+    </include>
+-->
+
+<!-- 
+=============================================================
+  HOW TO GET robocup2012_rvrl_pre1_light
+    You can get it by using following commands  
+     $ cd ~/.gazebo/models  
+     $ git clone https://github.com/m-shimizu/robocup2012_rvrl_pre1_light
+=============================================================
+-->
+<!-- RoboCup 2012 Rescue Virtual Robot League Pre-Liminary 1 LightS
+    <include>
+      <static>1</static>
+      <uri>model://robocup2012_rvrl_pre1_light</uri>
+    </include>
+-->
+
+<!--
+=============================================================
+  HOW TO GET JVRC_O* and JVRC_R*
+    You can get it by using following commands  
+     $ cd ~  
+     $ git clone https://github.com/m-shimizu/JVRC_task_models/  
+     $ cd JVRC_task_models
+     $ mv JVRC_* ~/.gazebo/models
+     $ \rm -r ~/JVRC_task_models
+=============================================================
+-->
+<!-- JVRC Task O1
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_O1</uri>
+    </include>
+-->
+<!-- JVRC Task O2
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_O2</uri>
+    </include>
+-->
+<!-- JVRC Task R1
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R1</uri>
+    </include>
+-->
+<!-- JVRC Task R11L
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R11L</uri>
+    </include>
+-->
+<!-- JVRC Task R11M
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R11M</uri>
+    </include>
+-->
+<!-- JVRC Task R12
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R12</uri>
+    </include>
+-->
+<!-- JVRC Task R2AB
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R2AB</uri>
+    </include>
+-->
+<!-- JVRC Task R2C
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R2C</uri>
+    </include>
+-->
+<!-- JVRC Task R3A
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R3A_field</uri>
+    </include>
+    <include>
+      <uri>model://JVRC_R3A_obj</uri>
+    </include>
+-->
+<!-- JVRC Task R3B
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R3B</uri>
+    </include>
+-->
+<!-- JVRC Task R4
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R4_field</uri>
+    </include>
+    <include>
+      <uri>model://JVRC_R4_obj</uri>
+    </include>
+-->
+<!-- JVRC Task R5
+    <include>
+      <static>1</static>
+      <uri>model://JVRC_R5_field</uri>
+    </include>
+    <include>
+      <uri>model://JVRC_R5_obj</uri>
+    </include>
+-->
+
+  </world>
+</sdf>

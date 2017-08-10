@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <include file="$(find pioneer2017)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot1"/>
+    <arg name="pose_x" value="-41"/>
+    <arg name="pose_y" value="-0.2"/>
+    <arg name="pose_z" value="0.2"/>
+    <arg name="pose_yaw" default="0"/>
+  </include>
+
+
+
+</launch>

@@ -1,0 +1,46 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl leaf01
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.320000 0.384000 0.128000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd ned-col.jpg
+map_d ned-clip.jpg
+
+newmtl td_branch01
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.320000 0.256000 0.128000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd bark.jpg
+map_Bump bark_b.jpg
+
+newmtl td_root01
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.320000 0.256000 0.128000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd bark.jpg
+map_Bump bark_b.jpg
+
+newmtl td_trunk01
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.320000 0.256000 0.128000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd bark.jpg
+map_Bump bark_b.jpg

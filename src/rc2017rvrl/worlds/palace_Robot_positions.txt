@@ -1,0 +1,23 @@
+robot positions:
+1st robot:
+x = 23; y = 66;
+2nd robot:
+x = 25; y = 66;
+3rd robot:
+x = -41; y = -0.2;
+4th robot:
+x = -41; y = 1;
+
+
+
+
+5th robot:
+x = -25; y = -51.5;
+
+
+
+Dead Victims : 6
+AliveVictims : 4
+
+size : 105m x 204m (-52 , 102) - (53 , -102)
+

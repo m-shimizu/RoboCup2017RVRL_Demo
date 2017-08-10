@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Material__1
+Ns 3.921569
+Ka 0.000000 0.000000 0.000000
+Kd 0.479541 0.640000 0.139664
+Ks 0.400000 0.400000 0.400000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Plant02_COLOR.png
+map_Bump Plant02_NRM.png
