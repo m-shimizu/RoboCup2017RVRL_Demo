@@ -1,6 +1,6 @@
 # RoboCup2017 Rescue Simulation Virtual Robot League Models
 This repository includes a robot model and field models used in RoboCup World Champion Ship 2017 Rescue Simulation Virtual Robot League(RC2017RVRL).  
-You can find other records of the RC2017RVRL game in [wiki page of this repository](https://github.com/m-shimizu/RC2017RVRL/wiki).
+You can find other records of the RC2017RVRL game in [wiki page of this repository](https://github.com/m-shimizu/RoboCup2017RVRL_Demo/wiki).
 And you can find important information like the latest rule in [the rescue virtual robot league wiki page](http://wiki.robocup.org/Rescue_Simulation_Virtual_Robot_Competition).
 
 In this year, we used "pioneer3at" robot, 5 fields for 3 preliminary games and a final game including 2 runs.  
