@@ -53,6 +53,9 @@ Do followings:
     gazebo (and wait for finish of downloading fundamental models)  
 
 __IMPORTANT NOTICE__  
+NOW YOU CAN USAE GAZEBO VERSION over 7.7.0, evenif 7.8.1.
+But if you saw your robot written in SDF, you have to read following lines.
+---
 At last, WE USED GAZEBO VERSION 7.7.0 in the final.  
 In Gazebo version 7.8.1, pioneer3at written in sdf slipped.  
 In Gazebo version 7.0.0, each pioneer3at written in sdf and urdf could move normally, but a field model for 2nd run of final game could not be loaded.  
@@ -256,4 +259,4 @@ Below table shows each PC's hostname, role and IP address.
 
 IP addresses, a network mask and name server addresses were given by a network administrators of the venue. 
 
-#### Changed 6/Aug./2017
+#### Changed 13/Aug./2017
