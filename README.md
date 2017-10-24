@@ -68,12 +68,12 @@ See [here](https://github.com/m-shimizu/p3at_for_ros_with_modelsdf/wiki/Installi
 Type following commands in a terminal.  
 
     $ cd  
-    $ git clone https://github.com/m-shimizu/RC2017RVRL  
+    $ git clone https://github.com/m-shimizu/RoboCup2017RVRL_Demo  
 
 ## HOW TO PREPARE TO USE THIS REPOSITORY  
 Build packages including this repository.  
 
-    $ cd ~/RC2017RVRL  
+    $ cd ~/RoboCup2017RVRL_Demo  
     $ catkin_make  
     
 ## GAME FIELD SPECIFICATIONS  
@@ -92,7 +92,7 @@ In this repository, You can see 4 alive victims and 1 dead victim in the prelimi
 At first, run following commands in each terminal:  
 
     $ cd  
-    $ cd RC2017RVRL  
+    $ cd RoboCup2017RVRL_Demo  
     $ source setup.bash  
     
 Then run a command which you want to try.  
