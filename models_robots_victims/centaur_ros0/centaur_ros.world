@@ -1,0 +1,232 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <gui>
+      <camera name='user_default'>
+        <pose>2 0 1.5 0 0.6 -3.141</pose>
+      </camera>
+    </gui>
+
+    <include> <uri>model://ground_plane</uri> </include>
+    <include> <uri>model://sun</uri> </include>
+
+    <include> <name> Centaur Robot </name>
+      <pose>0 0 0.15 0 0 0</pose> 
+      <uri>model://centaur_ros</uri> 
+    </include>
+
+<!--
+    <include><static>1</static> <uri> model://JVRC_R12 </uri> </include>
+    <include><pose>3.35 9.5 .7 -0.9 0 3.1415</pose><uri> model://victim165 </uri> </include>
+-->
+
+<!-- ################################################################### -->
+<!-- ################################################################### -->
+<!-- ################################################################### -->
+<!--
+    <state world_name='default'>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>1492707063 883132471</wall_time>
+      <iterations>0</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='centaur_ros'>
+        <pose frame=''>0 0 0.4 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>0 0 0.4 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='cameraYawServo'>
+          <pose frame=''>0.2 0 0.64 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='head_lidar_mount_link'>
+          <pose frame=''>0.061 0 1.291 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='head_link'>
+          <pose frame=''>0 0 1.157 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_elbow'>
+          <pose frame=''>0.029993 0.233364 0.756 3.14159 -1.14159 3.1204</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_shoulder_pitch'>
+          <pose frame=''>0 0.234 1.002 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_shoulder_roll'>
+          <pose frame=''>0 0.234 1.002 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_shoulder_yaw'>
+          <pose frame=''>0 0.234 1.002 0 0 -0.021193</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_wrist_roll'>
+          <pose frame=''>0.211566 0.229516 0.806124 -3.12193 0.219302 -1.48981</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_arm_wrist_yaw'>
+          <pose frame=''>0.211566 0.229516 0.806124 2.01126 0.219299 -1.48981</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_f0_link_0'>
+          <pose frame=''>0.217128 0.132496 1.00946 -1.4524 0.17258 -2.25787</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_f1_link_0'>
+          <pose frame=''>0.261806 0.186952 1.02173 -1.4524 0.17258 -2.25787</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='l_hand'>
+          <pose frame=''>0.211566 0.229516 0.806124 -2.9674 0.135346 -0.663337</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='laser1RollServo'>
+          <pose frame=''>0.146 0 0.6 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='laser1_link'>
+          <pose frame=''>0.21 0 0.6 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+        <link name='left_front_flipper_base_link'>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+          <pose frame=''>0.218 0.245 0.4 0 -0.75 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left_rear_flipper_base_link'>
+          <pose frame=''>-0.218 0.245 0.4 0 1.38 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='mounting_link'>
+          <pose frame=''>0.2 0 0.725 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='neck_link'>
+          <pose frame=''>0 0 1.157 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_elbow'>
+          <pose frame=''>0.029993 -0.233364 0.756 3.14159 -0.841593 -3.12039</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_shoulder_pitch'>
+          <pose frame=''>0 -0.234 1.002 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_shoulder_roll'>
+          <pose frame=''>0 -0.234 1.002 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_shoulder_yaw'>
+          <pose frame=''>0 -0.234 1.002 0 -0 0.021198</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_wrist_roll'>
+          <pose frame=''>0.188647 -0.23 0.857556 3.09639 -0.119086 -1.65671</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_arm_wrist_yaw'>
+          <pose frame=''>0.188647 -0.23 0.857556 2.30639 -0.119083 -1.65671</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_f0_link_0'>
+          <pose frame=''>0.194456 -0.254749 1.08148 -1.20054 0.055919 2.23939</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_f1_link_0'>
+          <pose frame=''>0.150204 -0.198731 1.07748 -1.20054 0.055919 2.23939</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='r_hand'>
+          <pose frame=''>0.188647 -0.23 0.857556 -3.08531 -0.114283 -2.47942</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='utorso'>
+          <pose frame=''>0 0 0.837 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='waist'>
+          <pose frame=''>0 0 0.837 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+-->
+  </world>
+</sdf>

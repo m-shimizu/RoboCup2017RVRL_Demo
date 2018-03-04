@@ -24,6 +24,27 @@ Sensor parameters were:
         Resolusion: 160 x 120  
         Frequency: 10  
 
+## NEWS : Added Quadrotor model
+Quadrotor model was added.  
+You can show and control 4 robots by following instructions:  
+
+At Terminal 1:  
+
+    $ roslaunch rc2017rvrl F1_sdf_quadrotor.launch  
+
+At Terminal 2:  
+
+    $ roslaunch hector_quadrotor_teleop buffalo_gamepad.launch robot:=robot0  
+     (AND PUSH No.4 BUTTON TO START!!)  
+     (You can also use logitech_gamepad.launch or sony_dualshock3.launch or xbox_controller.launch, and you should read them to find whch button is for start.)  
+
+At Terminal 3:  
+
+    $ rosrun image_view2 image_view2 image:=/quadrotor_ros/camera_ros/image    
+
+You can use robot1, robot2, robot3 instead of robot0.  
+
+
 ## PC SPECIFICATION REQUIRMENT OF THIS REPOSITORY  
 Several field models are heavy. You should use a desktop machine having a graphic card.  
 Following is a common specification of PCs used in RC2017RVRL.  
@@ -259,4 +280,4 @@ Below table shows each PC's hostname, role and IP address.
 
 IP addresses, a network mask and name server addresses were given by a network administrators of the venue. 
 
-#### Changed 13/Aug./2017
+#### Changed 28/Feb./2018

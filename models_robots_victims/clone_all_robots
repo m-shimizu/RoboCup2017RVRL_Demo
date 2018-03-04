@@ -1,0 +1,22 @@
+#!/bin/bash
+
+./clone_sdf pioneer2dx_ros pioneer2dx_ros0 robot robot0
+./clone_sdf pioneer2dx_ros pioneer2dx_ros1 robot robot1
+./clone_sdf pioneer2dx_ros pioneer2dx_ros2 robot robot2
+./clone_sdf pioneer2dx_ros pioneer2dx_ros3 robot robot3
+
+./clone_sdf pioneer3at_ros pioneer3at_ros0 robot robot0
+./clone_sdf pioneer3at_ros pioneer3at_ros1 robot robot1
+./clone_sdf pioneer3at_ros pioneer3at_ros2 robot robot2
+./clone_sdf pioneer3at_ros pioneer3at_ros3 robot robot3
+
+./clone_sdf centaur_ros centaur_ros0 robot robot0
+./clone_sdf centaur_ros centaur_ros1 robot robot1
+./clone_sdf centaur_ros centaur_ros2 robot robot2
+./clone_sdf centaur_ros centaur_ros3 robot robot3
+
+./clone_sdf quadrotor_ros quadrotor_ros0 robot robot0
+./clone_sdf quadrotor_ros quadrotor_ros1 robot robot1
+./clone_sdf quadrotor_ros quadrotor_ros2 robot robot2
+./clone_sdf quadrotor_ros quadrotor_ros3 robot robot3
+
