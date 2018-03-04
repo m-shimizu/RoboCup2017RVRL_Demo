@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="pioneer3at_ros1">
+  <model name="pioneer3at_ros">
     <pose>0 0 0.180 0 0 0</pose>
     <static>false</static>
     <link name="chassis">
