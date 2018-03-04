@@ -24,16 +24,44 @@ Sensor parameters were:
         Resolusion: 160 x 120  
         Frequency: 10  
 
-## NEWS : Added Quadrotor model
+## NEWS : Added Quadrotor Robot
 Quadrotor model was added.  
-You can show and control 4 robots by following instructions:  
+You can see and control 4 quadrotor robots by following instructions:  
 
 At Terminal 1:  
 
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
     $ roslaunch rc2017rvrl F1_sdf_quadrotor.launch  
+
+    OR
+
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
+    $ roslaunch rc2017rvrl F2_sdf_quadrotor.launch  
+
+    OR
+
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
+    $ roslaunch rc2017rvrl PreL1_sdf_quadrotor.launch   (BUGGY, do not use this)  
+
+    OR
+
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
+    $ roslaunch rc2017rvrl PreL2_sdf_quadrotor.launch  
+
+    OR
+
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
+    $ roslaunch rc2017rvrl PreL3_sdf_quadrotor.launch  
 
 At Terminal 2:  
 
+    $ cd ~/RoboCup2017RVRL_Demo
+    $ source setup.bash
     $ roslaunch hector_quadrotor_teleop buffalo_gamepad.launch robot:=robot0  
      (AND PUSH No.4 BUTTON TO START!!)  
      (You can also use logitech_gamepad.launch or sony_dualshock3.launch or xbox_controller.launch, and you should read them to find whch button is for start.)  
