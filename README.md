@@ -68,7 +68,7 @@ At Terminal 2:
 
 At Terminal 3:  
 
-    $ rosrun image_view2 image_view2 image:=/quadrotor_ros/camera_ros/image    
+    $ rosrun image_view2 image_view2 image:=/robot0/camera_ros/image    
 
 You can use robot1, robot2, robot3 instead of robot0.  
 
