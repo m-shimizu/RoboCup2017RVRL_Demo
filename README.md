@@ -111,10 +111,11 @@ At Terminal 2:
 
     $ cd ~/RoboCup2017RVRL_Demo  
     $ source setup.bash  
-    $ roslaunch rc2018rvrl centaur_init_pose4.launch  (do this after the map displayed)
-    $ roslaunch hector_quadrotor_teleop buffalo_gamepad.launch robot:=robot0  
-     (AND PUSH No.4 BUTTON TO START!!)  
-     (You can also use logitech_gamepad.launch or sony_dualshock3.launch or xbox_controller.launch, and you should read them to find whch button is for start.)  
+    $ roslaunch rc2017rvrl centaur_init_pose4.launch  (do this after the map displayed)  
+    $ roslaunch rc2017rvrl centaur_joint_trajectory.launch robot_name:=robot0  
+    
+    You can know how to use the rqt trajectory controller heuristically.  
+    Try it!  
 
 At Terminal 3:  
 
