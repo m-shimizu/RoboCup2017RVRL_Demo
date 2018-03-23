@@ -1,39 +1,26 @@
 <?xml version="1.0"?>
 <launch>
-
   <arg name="robot_name" default="pioneer3at_ros"/>
-  <arg name="pose_x" default="0"/>
-  <arg name="pose_y" default="0"/>
-  <arg name="pose_yaw" default="0"/>
-
-  <!--
-  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_$(arg robot_name)" args="-urdf -param $(arg robot_name)/robot_description -namespace $(arg robot_name) -model pioneer3at_rc2016_$(arg robot_name) -x $(arg pose_x) -y $(arg pose_y) -Y $(arg pose_yaw)"/>
-  -->
-
   <group ns="$(arg robot_name)">
-    
-    <!-- robot_description is needed for gazebo_ros package. -->
-    <!-- currently the value of robot_description is dummy. -->
     <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
     <param name="robot_description" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at_rc2016.urdf.xacro' robot_name:=$(arg robot_name)"/>
 
-
     <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" output="screen">
+<!--
       <param name="publish_frequency" type="double" value="15.0" />
       <param name="tf_prefix" type="string" value="$(arg robot_name)" />
+-->
     </node>
-
 
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen">
+<!--
       <param name="publish_frequency" type="double" value="15.0" />
       <param name="use_gui" value="false" />
+      <param name="tf_prefix" type="string" value="$(arg robot_name)" />
+-->
     </node>
 
-
+    <node name="tf_static_hokuyo_link_frame" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 $(arg robot_name)/hokuyo_link $(arg robot_name)/hokuyo_frame 100"/>
     <node name="tf_static_odom_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 $(arg robot_name)/odom $(arg robot_name)/base_link 100"/>
-    <!--
-    rosrun tf static_transform_puisher 0 0 0 0 0 0 pioneer3at_ros/odom pioneer3at_ros/base_link 100
-    -->
   </group>
-
 </launch>

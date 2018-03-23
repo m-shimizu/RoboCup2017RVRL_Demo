@@ -1,21 +1,8 @@
 <?xml version="1.0"?>
 <launch>
-
   <arg name="robot_name" default="robot"/>
-  <arg name="pose_x" default="0"/>
-  <arg name="pose_y" default="0"/>
-  <arg name="pose_yaw" default="0"/>
-  
-<!-- FROM SPAWN_COMPLETE_EMPTY_WORLD.LAUNCH
-  <include file="$(find hector_centaur_gazebo)/launch/start_centaur_default_with_controllers.launch" />
-  <include file="$(find hector_centaur_onboard)/launch/onboard_reduced.launch" />
--->
-
-  <!--
-  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_$(arg robot_name)" args="-urdf -param $(arg robot_name)/robot_description -namespace $(arg robot_name) -model pioneer3at_rc2016_$(arg robot_name) -x $(arg pose_x) -y $(arg pose_y) -Y $(arg pose_yaw)"/>
-  -->
   <group ns="$(arg robot_name)">
-      
+    <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
     <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_default_controllers.yaml"/> 
     <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_joint_limits.yaml"/>
     <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_thor_mang_hand_parameters.yaml"/>
@@ -32,7 +19,6 @@
     <!-- Following was not working -->
     <!--
     <param name="robot_description" command="$(find xacro)/xacro '$(find hector_centaur_description)/robots/centaur_default.urdf.xacro' robot_name:=$(arg robot_name)"/>
-    <param name="robot_description" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at_rc2016.urdf.xacro' robot_name:=$(arg robot_name)"/>
 -->    
     <param name="robot_description" command="cat $(find rc2017rvrl)/urdf/centaur_ros.urdf"/>
     <!-- load the controllers -->
@@ -51,17 +37,26 @@
 -->
 
     <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+      <!--
       <param name="publish_frequency" type="double" value="100.0"/>
       <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
-      <!--
       <remap from="joint_states" to="$(arg robot_name)/joint_states"/>
       <remap from="robot_description" to="robot_description_thor_mang"/>
       -->
     </node>  
 
-    <param name="tf_prefix" type="string" value="$(arg robot_name)"/> 
+<!--
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="15.0" />
+      <param name="use_gui" value="false" />
+      <param name="tf_prefix" type="string" value="$(arg robot_name)" />
+    </node>
+-->
+
     <node name="tf_static_odom2base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 $(arg robot_name)/odom $(arg robot_name)/base_link 100"/>
+<!--    
     <node name="tf_static_cbase2base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 $(arg robot_name)/base_link base_link 100"/>    
+-->
 
 <!--
     <node name="tf_static_odom2base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 odom base_link 100"/>

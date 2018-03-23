@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="pioneer2dx_ros">
-    <link name="chassis">
+  <model name="robot">
+    <link name="base_link">
       <pose>0 0 0.16 0 0 0</pose>
       <inertial>
         <mass>5.67</mass>
@@ -157,7 +157,7 @@
     <joint type="revolute" name="left_wheel_hinge">
       <pose>0 0 -0.03 0 0 0</pose>
       <child>left_wheel</child>
-      <parent>chassis</parent>
+      <parent>base_link</parent>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -166,7 +166,7 @@
     <joint type="revolute" name="right_wheel_hinge">
       <pose>0 0 0.03 0 0 0</pose>
       <child>right_wheel</child>
-      <parent>chassis</parent>
+      <parent>base_link</parent>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -174,7 +174,7 @@
     </joint>
 
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <robotNamespace>pioneer2dx_ros</robotNamespace>
+      <robotNamespace>robot</robotNamespace>
       <alwaysOn>true</alwaysOn>
       <updateRate>100.0</updateRate>
       <leftJoint>left_wheel_hinge</leftJoint>
@@ -185,7 +185,7 @@
       <wheelSeparation>0.5380</wheelSeparation>
       <wheelDiameter>0.2410</wheelDiameter>
 -->
-      <robotBaseFrame>chassis</robotBaseFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
       <torque>200</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
@@ -206,7 +206,7 @@
 
 
 <!-- Camera (hight is 100mm) -->
-    <link name="camera_ros_link">
+    <link name="camera_link">
       <audio_sink/>
       <pose>0.1 0 0.383 0 0 0</pose>
       <inertial>
@@ -234,7 +234,7 @@
 <!-- THERMAL CAMERA --> 
       <sensor type="camera" name="thermal_camera_sensor">
         <update_rate>10</update_rate>
-        <camera name="camera_ros_thermal">
+        <camera name="camera_thermal">
           <horizontal_fov>1.047</horizontal_fov>
           <image>
             <width>160</width>
@@ -242,7 +242,7 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.01</near>
+            <near>0.1</near>
             <far>100</far>
           </clip>
 <!--
@@ -254,19 +254,19 @@
 -->
         </camera>
         <plugin name="thermal_camera_controller" filename="libgazebo_ros_thermal_camera_pink.so">
-          <robotNamespace>pioneer2dx_ros</robotNamespace>
+          <robotNamespace>robot</robotNamespace>
           <alwaysOn>true</alwaysOn>
           <updateRate>10</updateRate>
-          <imageTopicName>thermal_camera/image_raw</imageTopicName>
-          <cameraInfoTopicName>thermal_camera/camera_info</cameraInfoTopicName>
+          <imageTopicName>camera/thermal/image_raw</imageTopicName>
+          <cameraInfoTopicName>camera/thermal/camera_info</cameraInfoTopicName>
           <frameName>thermal_optical_frame</frameName>
           <interface:camera name="thermal_camera_iface" />
         </plugin>
       </sensor> -->
 <!-- CAMERA -->
-      <sensor type="camera" name="camera_ros">
+      <sensor type="camera" name="camera">
         <update_rate>20</update_rate>
-        <camera name="camera_ros">
+        <camera name="camera">
           <horizontal_fov>1.047</horizontal_fov>
           <image>
             <width>320</width>
@@ -287,13 +287,13 @@
           </noise>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <robotNamespace>pioneer2dx_ros</robotNamespace>
+          <robotNamespace>robot</robotNamespace>
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
-          <cameraName>camera_ros</cameraName>
+          <cameraName>camera</cameraName>
           <imageTopicName>image</imageTopicName>
-          <cameraInfoTopicName>camera_ros_info</cameraInfoTopicName>
-          <frameName>camera_ros_link</frameName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
           <hackBaseline>0.07</hackBaseline>
           <distortionK1>0.0</distortionK1>
           <distortionK2>0.0</distortionK2>
@@ -304,8 +304,8 @@
       </sensor>
     </link>
     <joint name="camera_joint" type="revolute">
-      <parent>chassis</parent>
-      <child>camera_ros_link</child>
+      <parent>base_link</parent>
+      <child>camera_link</child>
       <pose>0 0 0 0 0 0</pose>
       <axis>
         <xyz>0.000000 0.000000 1.000000</xyz>
@@ -318,7 +318,7 @@
 
 
 <!-- Hokuyo (hight is 70mm) -->
-    <link name="hokuyo_ros_link">
+    <link name="hokuyo_link">
       <pose>0.1 0 0.298 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
@@ -368,7 +368,7 @@
           </range>
         </ray>
         <plugin name="gazebo_ros_hokuyo_controller" filename="libgazebo_ros_laser.so">
-          <robotNamespace>pioneer2dx_ros</robotNamespace>
+          <robotNamespace>robot</robotNamespace>
           <gaussianNoise>0.005</gaussianNoise>
           <alwaysOn>true</alwaysOn>
           <updateRate>30</updateRate>
@@ -378,8 +378,8 @@
       </sensor>
     </link>
     <joint name="hokuyo_joint" type="revolute">
-      <parent>chassis</parent>
-      <child>hokuyo_ros_link</child>
+      <parent>base_link</parent>
+      <child>hokuyo_link</child>
       <pose>0 0 0 0 0 0</pose>
       <axis>
         <xyz>0.000000 0.000000 1.000000</xyz>

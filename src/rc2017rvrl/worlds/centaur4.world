@@ -9,21 +9,25 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
-    <!-- A centaur_ros -->
+    <!-- 4 centaur_ros -->
     <include>
       <uri>model://centaur_ros0</uri>
+      <name>robot0</name>
       <pose>0 0 0 0 0 0</pose>
     </include>
     <include>
       <uri>model://centaur_ros1</uri>
+      <name>robot1</name>
       <pose>-2 0 0 0 0 0</pose>
     </include>
     <include>
       <uri>model://centaur_ros2</uri>
+      <name>robot2</name>
       <pose>0 -2 0 0 0 0</pose>
     </include>
     <include>
       <uri>model://centaur_ros3</uri>
+      <name>robot3</name>
       <pose>-2 -2 0 0 0 0</pose>
     </include>
     <include>

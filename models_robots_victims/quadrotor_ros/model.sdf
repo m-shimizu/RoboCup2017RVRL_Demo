@@ -112,8 +112,8 @@
           <robotNamespace>robot</robotNamespace>
           <alwaysOn>true</alwaysOn>
           <updateRate>10</updateRate>
-          <imageTopicName>thermal_camera/image_raw</imageTopicName>
-          <cameraInfoTopicName>thermal_camera/camera_info</cameraInfoTopicName>
+          <imageTopicName>camera/thermal/image_raw</imageTopicName>
+          <cameraInfoTopicName>camera/thermal/camera_info</cameraInfoTopicName>
           <frameName>thermal_optical_frame</frameName>
           <interface:camera name="thermal_camera_iface" />
         </plugin>
@@ -283,7 +283,7 @@
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <bodyName>base_link</bodyName>
-        <frameId>/base_link</frameId>
+        <frameId>base_link</frameId>
         <controlRate>100.0</controlRate>
         <controlTolerance>0.01</controlTolerance>
         <controlDelay>0.01</controlDelay>
