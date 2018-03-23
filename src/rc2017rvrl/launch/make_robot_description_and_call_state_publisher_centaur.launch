@@ -2,25 +2,25 @@
 <launch>
   <arg name="robot_name" default="robot"/>
   <group ns="$(arg robot_name)">
-    <param name="tf_prefix" type="string" value="$(arg robot_name)"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_default_controllers.yaml"/> 
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_joint_limits.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/centaur_thor_mang_hand_parameters.yaml"/>
+    <param name="tf_prefix" type="string" value="$(arg robot_name)"/>      
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/centaur_default_controllers.yaml"/> 
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/centaur_joint_limits.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/centaur_thor_mang_hand_parameters.yaml"/>
     <!--
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/obelix_flippers_gazebo.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_left_controllers.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_left_trajectory_controllers.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_left_trajectory_sim_controllers.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_right_controllers.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_right_trajectory_controllers.yaml"/>
-    <rosparam command="load" file="$(find rc2017rvrl)/config/centaur_ros/vt_hand_right_trajectory_sim_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/obelix_flippers_gazebo.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_left_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_left_trajectory_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_left_trajectory_sim_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_right_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_right_trajectory_controllers.yaml"/>
+    <rosparam command="load" file="$(find rc2018rvrl)/config/centaur_ros/vt_hand_right_trajectory_sim_controllers.yaml"/>
 -->
     <!-- robot_description is needed for gazebo_ros package. -->
     <!-- Following was not working -->
     <!--
     <param name="robot_description" command="$(find xacro)/xacro '$(find hector_centaur_description)/robots/centaur_default.urdf.xacro' robot_name:=$(arg robot_name)"/>
--->    
-    <param name="robot_description" command="cat $(find rc2017rvrl)/urdf/centaur_ros.urdf"/>
+-->
+    <param name="robot_description" command="cat $(find rc2018rvrl)/urdf/centaur_ros.urdf"/>
     <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
       args="joint_state_controller           
@@ -64,9 +64,9 @@
     <node name="tf_static_lhand2lpalm" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 l_hand l_palm 100"/>
     <node name="tf_static_rhand2rpalm" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 r_hand r_palm 100"/>    
 -->
-    <node name="centaur_init_pose" pkg="rc2017rvrl" type="centaur_init_pose"/>
-
+<!-- It was too early timing to call centaur_init_pose, then call centaur_init_pose4.launch after the environment model was displayed completely.
+    <node name="centaur_init_pose" pkg="rc2018rvrl" type="centaur_init_pose"/>
+-->
   </group>
-
 </launch>
 

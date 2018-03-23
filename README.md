@@ -24,44 +24,94 @@ Sensor parameters were:
         Resolusion: 160 x 120  
         Frequency: 10  
 
-## NEWS : Added Quadrotor Robot
+## NEWS 1 : Added Quadrotor Robot  
 Quadrotor model was added.  
 You can see and control 4 quadrotor robots by following instructions:  
 
 At Terminal 1:  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
     $ roslaunch rc2017rvrl F1_sdf_quadrotor.launch  
 
-    OR
+    OR  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
     $ roslaunch rc2017rvrl F2_sdf_quadrotor.launch  
 
-    OR
+    OR  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
     $ roslaunch rc2017rvrl PreL1_sdf_quadrotor.launch   (BUGGY, do not use this)  
 
-    OR
+    OR  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
     $ roslaunch rc2017rvrl PreL2_sdf_quadrotor.launch  
 
-    OR
+    OR  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
     $ roslaunch rc2017rvrl PreL3_sdf_quadrotor.launch  
 
 At Terminal 2:  
 
-    $ cd ~/RoboCup2017RVRL_Demo
-    $ source setup.bash
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch hector_quadrotor_teleop buffalo_gamepad.launch robot:=robot0  
+     (AND PUSH No.4 BUTTON TO START!!)  
+     (You can also use logitech_gamepad.launch or sony_dualshock3.launch or xbox_controller.launch, and you should read them to find whch button is for start.)  
+
+At Terminal 3:  
+
+    $ rosrun image_view2 image_view2 image:=/robot0/camera_ros/image    
+
+You can use robot1, robot2, robot3 instead of robot0.  
+
+
+## NEWS 2 : Added Centaur Robot  
+Centaur robot model was added.  
+You can see and control 4 quadrotor robots by following instructions:  
+
+At Terminal 1:  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2017rvrl F1_sdf_centaur.launch  
+
+    OR  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2017rvrl F2_sdf_centaur.launch  
+
+    OR  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2017rvrl PreL1_sdf_centaur.launch   (BUGGY, do not use this)  
+
+    OR  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2017rvrl PreL2_sdf_centaur.launch  
+
+    OR  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2017rvrl PreL3_sdf_centaur.launch  
+
+At Terminal 2:  
+
+    $ cd ~/RoboCup2017RVRL_Demo  
+    $ source setup.bash  
+    $ roslaunch rc2018rvrl centaur_init_pose4.launch  (do this after the map displayed)
     $ roslaunch hector_quadrotor_teleop buffalo_gamepad.launch robot:=robot0  
      (AND PUSH No.4 BUTTON TO START!!)  
      (You can also use logitech_gamepad.launch or sony_dualshock3.launch or xbox_controller.launch, and you should read them to find whch button is for start.)  

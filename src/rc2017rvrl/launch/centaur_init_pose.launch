@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="robot"/>
+  <group ns="$(arg robot_name)">
+    <node name="centaur_init_pose" pkg="rc2018rvrl" type="centaur_init_pose"/>
+  </group>
+</launch>
+
