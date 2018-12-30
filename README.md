@@ -1,3 +1,6 @@
+# IMPORTANT : THIS REPOSITORY WAS MOVED TO THE NEW ORGANIZATION "[RoboCup Rescue Simulation Virtual Robot League](https://github.com/RoboCupRescueVirtualRobotLeague)."  
+# PLEASE VISIT THE ORGANIZATION TO KEEP YOU UPTODATE.  
+---  
 # RoboCup2017 Rescue Simulation Virtual Robot League Models
 This repository includes a robot model and field models used in RoboCup World Champion Ship 2017 Rescue Simulation Virtual Robot League(RC2017RVRL).  
 You can find other records of the RC2017RVRL game in [wiki page of this repository](https://github.com/m-shimizu/RoboCup2017RVRL_Demo/wiki).
